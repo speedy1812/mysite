@@ -2,6 +2,9 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+activate :directory_indexes
+page "/404.html", directory_index: false
+
 configure :build do
   activate :external_pipeline,
     name: :gulp,
