@@ -1,4 +1,11 @@
 activate :blog do |blog|
+  blog.name = "videos"
+  blog.prefix = "videos"
+end
+
+activate :blog do |blog|
+  blog.name = "text"
+  blog.prefix = "text"
 end
 
 page '/*.xml', layout: false
