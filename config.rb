@@ -1,6 +1,7 @@
 activate :blog do |blog|
   blog.name = "videos"
   blog.prefix = "videos"
+  blog.new_article_template = File.expand_path('source/article-templates/video-template.erb', File.dirname(__FILE__))
 end
 
 activate :blog do |blog|

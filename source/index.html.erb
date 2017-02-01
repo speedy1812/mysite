@@ -10,7 +10,7 @@ title: Welcome to Middleman
 
   <% blog('videos').articles[0...5].each do |article| %>
 
-    <a href="<%= article.url %>"><%= article.title %></a><br>
+    <a href="<%= article.url %>"><%= article.title %></a> - <%= article.data.videotime %><br>
 
   <% end %>
 
