@@ -5,6 +5,6 @@ youtubecode:
 videotime: "15:00"
 introtext: "This is some intro text for the first post."
 image: middleman-01.jpg
-tags:
+tags: middleman, article01, hello
 ---
 

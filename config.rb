@@ -3,6 +3,7 @@ activate :blog do |blog|
   blog.prefix = "videos"
   blog.permalink = "{title}.html"
   blog.layout = "video-layout"
+  blog.tag_template = "tag.html"
   blog.new_article_template = File.expand_path('source/article-templates/video-template.erb', File.dirname(__FILE__))
 end
 
