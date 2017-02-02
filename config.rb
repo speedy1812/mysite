@@ -1,12 +1,15 @@
 activate :blog do |blog|
   blog.name = "videos"
   blog.prefix = "videos"
+  blog.permalink = "{title}.html"
+  blog.layout = "video-layout"
   blog.new_article_template = File.expand_path('source/article-templates/video-template.erb', File.dirname(__FILE__))
 end
 
 activate :blog do |blog|
   blog.name = "text"
   blog.prefix = "text"
+  blog.permalink = "{title}.html"
 end
 
 page '/*.xml', layout: false
