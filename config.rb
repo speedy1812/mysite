@@ -5,6 +5,12 @@ activate :blog do |blog|
   blog.layout = "video-layout"
   blog.tag_template = "tag.html"
   blog.new_article_template = File.expand_path('source/article-templates/video-template.erb', File.dirname(__FILE__))
+  blog.custom_collections = {
+    category: {
+      link: '/categories/{category}.html',
+      template: '/category.html'
+    }
+  }
 end
 
 activate :blog do |blog|

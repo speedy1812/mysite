@@ -4,28 +4,34 @@ title: Welcome to Middleman
 
 <div class="container clearfix">
 
-  <div class="video-list">
-    <% blog('videos').articles[0...5].each do |article| %>
-      <div class="video-list-item">
-        <h3><a href="<%= article.url %>"><%= article.title %></a></h3>
-        <%= image_tag(article.data.image) %>
-        <p><%= article.data.introtext %></p>
+    <div class="video-list">
+        <% blog('videos').articles[0...5].each do |article| %>
+            <div class="video-list-item clearfix">
+                <div class="meta">
+                    <ol>
+                        <% article.tags.each do |tag, articles| %>
+                            <li><%= link_to "#{tag}", tag_path(tag, 'videos') %></li>
+                        <% end %>
+                    </ol>
+
+                    Category: <%= link_to "#{article.data.category}", category_path(article.data.category, 'videos') %>
+                </div>
+                <div class="content">
+                    <h3><a href="<%= article.url  %>"><%= article.title %></a></h3>
+                    <%# <%= thumb_tag article.data.image, '447x' %>
+                    <p><%= article.data.introtext %></p>
+                    <%= link_to("Read more", article.url, class:"btn") %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="tags-list">
+        <h3>Tags</h3>
         <ol>
-          <% article.tags.each do |tag, articles| %>
-            <li><%= link_to "#{tag}", tag_path(tag, 'videos') %></li>
+          <% blog('videos').tags.each do |tag, articles| %>
+            <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag, 'videos') %></li>
           <% end %>
         </ol>
-        <%= link_to("Read more", article.url) %>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="tags-list">
-    <h3>Tags</h3>
-    <ol>
-      <% blog('videos').tags.each do |tag, articles| %>
-        <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag, 'videos') %></li>
-      <% end %>
-    </ol>
-  </div>
+    </div>
 </div>

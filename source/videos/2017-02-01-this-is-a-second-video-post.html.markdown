@@ -6,6 +6,8 @@ videotime: "13:26"
 introtext: "This is some intro text for the second post."
 image: middleman-02.jpg
 tags: middleman, hello, world
+category: html5
+
 ---
 
 In this episode I’m talking about Middleman - what is it, advantages, disadvantages. Also you will learn how to install it and how to make your first Middleman site.
