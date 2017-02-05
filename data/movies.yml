@@ -1,0 +1,9 @@
+movies:
+  - title: Inception
+    director: Nolan
+    actors: Dicaprio, Page
+    poster: inception.jpg
+  - title: The Dark Knight
+    director: Nolan
+    actors: Bale, Ledger
+    poster: dark-knight.jpg
